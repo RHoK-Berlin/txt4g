@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta id="viewport" name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+	
+	<title>RhokSmsify</title>
+	
+	<%= stylesheet_link_tag    "application" %>
+	<%= stylesheet_link_tag    "iphone" %>	
+	
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+	
+	<script type="text/javascript">
+	function clickclear(thisfield, defaulttext) {
+	if (thisfield.value == defaulttext) {
+	thisfield.value = "";
+	}
+	}
+	function clickrecall(thisfield, defaulttext) {
+	if (thisfield.value == "") {
+	thisfield.value = defaulttext;
+	}
+	}
+	</script>
+	
+  <title>RhokSmsify</title>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
