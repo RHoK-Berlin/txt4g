@@ -16,7 +16,7 @@ public class Txt4gRunner {
 	 */
     public static void main(String[] args) throws Exception{
     	ThreadRunner<MessagingJob> tr = new ThreadRunner<MessagingJob>(new MessagingJob());
-    	
+    	System.out.println("main called");
     	Thread t = new Thread(tr);
     	t.start();
     }

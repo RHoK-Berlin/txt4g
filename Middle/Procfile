@@ -1,1 +1,1 @@
-worker: sh target/bin/txt4g-runner
+tick: sh target/bin/txt4g-runner

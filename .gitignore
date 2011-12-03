@@ -26,7 +26,7 @@ tmp/*
 .sass-cache
 .project
 .classpath
-/.settings
+**/.settings
 /target
 /config/config.yml
 /config/database.yml
