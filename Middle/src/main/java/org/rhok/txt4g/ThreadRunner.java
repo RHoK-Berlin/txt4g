@@ -3,8 +3,8 @@ package org.rhok.txt4g;
 import java.util.Date;
 
 /**
- * Runs a job frequently. As opposed to a cronjob this can hold data (i.e. cache hits)
- * and avoids gc operations. 
+ * Runs a job frequently. As opposed to a cronjob this can hold data (db cache hits)
+ * and avoids unnecessary gc operations. 
  * 
  * @author ddebray, mwinter
  * 
@@ -25,8 +25,9 @@ public class ThreadRunner<T extends MessagingJob> implements Runnable {
 		lastJobStarted = new Date();
 		while (true) {
 			try {
-				if (lastJobStarted.getTime() + INTERVAL_IN_MS > new Date().getTime()) {
+				if (lastJobStarted.getTime() + INTERVAL_IN_MS < new Date().getTime()) {
 					job.run();
+					lastJobStarted = new Date();
 				} else {
 					Thread.sleep(SLEEPTIME_IN_MS);
 				}
