@@ -1,0 +1,10 @@
+<%= form_for @feed do |f| %>
+  <div class="clearfix">
+    <%= f.label :name, 'Name' %>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+
+  <%= f.submit 'Save', :class => 'btn primary'%>
+<% end %>

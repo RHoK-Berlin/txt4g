@@ -10,8 +10,17 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+      }
+    </style>
   </head>
   <body class="<%= params[:controller] %>">
+
+    <%= render 'layouts/navigation' %>
+
     <div id="container" class="container">
       <header>
         <%- flash.each do |name, msg| -%>
