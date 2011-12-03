@@ -4,6 +4,7 @@
   <% @feeds.each do |feed| %>
     <tr>
       <td><%= link_to feed.name, feed_news_items_path(feed) %></td>
+      <td><%= link_to feed.sms_identifier || '', feed_news_items_path(feed) %></td>
     </tr>
   <% end %>
 </table>

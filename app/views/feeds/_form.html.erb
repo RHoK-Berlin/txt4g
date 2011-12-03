@@ -6,5 +6,12 @@
     </div>
   </div>
 
+  <div class="clearfix">
+    <%= f.label :sms_identifier, 'Identifier' %>
+    <div class="input">
+      <%= f.text_field :sms_identifier %>
+    </div>
+  </div>
+
   <%= f.submit 'Save', :class => 'btn primary'%>
 <% end %>
