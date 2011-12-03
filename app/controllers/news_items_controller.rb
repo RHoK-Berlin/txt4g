@@ -16,7 +16,7 @@ class NewsItemsController < ApplicationController
       flash[:success] = "Saved"
       redirect_to feed_news_items_path(@feed)
     else
-      flash[:error] = 'Could not save'
+      flash.now[:error] = 'Could not save'
       render :new
     end
   end

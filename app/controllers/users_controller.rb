@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = "Saved"
       redirect_to edit_user_path(@user)
     else
-      flash[:error] = 'Could not save'
+      flash.now[:error] = 'Could not save'
       render :new
     end
   end
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
       flash[:success] = "Saved"
       redirect_to edit_user_path(@user)
     else
-      flash[:error] = 'Could not save'
+      flash.now[:error] = 'Could not save'
       render :edit
     end
   end

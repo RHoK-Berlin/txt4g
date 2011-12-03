@@ -7,6 +7,6 @@
  *= require_tree . 
 */
 
-body {
-  padding-top: 40px;
+.alert-message {
+  margin-top: 24px;
 }
