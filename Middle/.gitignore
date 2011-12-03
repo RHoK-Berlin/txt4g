@@ -28,6 +28,7 @@ tmp/*
 .classpath
 **/.settings
 /target
+/src&generated-sources
 /config/config.yml
 /config/database.yml
 /coverage.data
