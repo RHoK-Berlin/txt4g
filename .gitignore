@@ -24,6 +24,10 @@ tmp/*
 .rspec
 .redcar/
 .sass-cache
+.project
+.classpath
+/.settings
+/target
 /config/config.yml
 /config/database.yml
 /coverage.data
