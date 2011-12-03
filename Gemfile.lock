@@ -197,6 +197,7 @@ DEPENDENCIES
   database_cleaner (>= 0.7.0)
   devise (>= 1.5.0)
   factory_girl_rails
+  jquery-rails
   kaminari
   launchy
   mongoid (>= 2.3.3)

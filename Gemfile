@@ -18,6 +18,7 @@ gem "mongoid", ">= 2.3.3"
 gem "devise", ">= 1.5.0"
 gem "twitter-bootstrap-rails"
 gem 'kaminari'
+gem 'jquery-rails'
 
 group :test do
   gem 'launchy'
