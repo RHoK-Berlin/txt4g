@@ -1,0 +1,1 @@
+Command to start the middleware (java) heroku scale tick=1
