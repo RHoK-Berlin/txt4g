@@ -3,7 +3,7 @@
 <table class='bordered-table zebra-striped'>
   <% @feeds.each do |feed| %>
     <tr>
-      <td><%= link_to feed.name, feed %></td>
+      <td><%= link_to feed.name, feed_news_items_path(feed) %></td>
     </tr>
   <% end %>
 </table>

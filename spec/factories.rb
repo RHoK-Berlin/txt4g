@@ -6,3 +6,7 @@ Factory.define :user do |u|
   u.password_confirmation { password }
 end
 
+Factory.define :feed do |f|
+  f.name "Malaria"
+end
+

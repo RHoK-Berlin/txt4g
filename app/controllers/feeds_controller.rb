@@ -13,7 +13,7 @@ class FeedsController < ApplicationController
     @feed = Feed.new params[:feed]
     if @feed.save
       flash[:success] = "Saved"
-      redirect_to @feed
+      redirect_to feed_news_items_path(@feed)
     else
       flash[:error] = 'Could not save'
       render :new
@@ -32,7 +32,7 @@ class FeedsController < ApplicationController
     @feed = Feed.find params[:id]
     if @feed.update_attributes params[:feed]
       flash[:success] = "Saved"
-      redirect_to @feed
+      redirect_to feed_news_items_path(@feed)
     else
       flash[:error] = 'Could not save'
       render :edit

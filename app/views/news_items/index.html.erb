@@ -1,0 +1,20 @@
+<h1><%= @feed.name %></h1>
+
+<table id='news_items' class='bordered-table zebra-striped'>
+  <% if @news_items.any? %>
+    <% @news_items.each do |news_item| %>
+      <tr>
+        <td><%= news_item.text %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td>No items in this feed yet.</td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="actions">
+  <%= link_to 'Add an item to this feed', new_feed_news_item_path(@feed), :class => 'btn' %>
+  <%= link_to 'Edit', edit_feed_path(@feed), :class => 'btn' %>
+</div>
