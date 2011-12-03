@@ -1,0 +1,15 @@
+<h1>All users</h1>
+
+<table class='bordered-table zebra-striped'>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.email, edit_user_path(user) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @users %>
+
+<div class="actions">
+  <%= link_to 'Add new user', new_user_path, :class => 'btn' %>
+</div>
