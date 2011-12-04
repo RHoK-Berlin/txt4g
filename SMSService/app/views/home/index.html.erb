@@ -1,0 +1,23 @@
+<h1>New Message</h1>
+
+<%= form_tag("/sms/recv", :method => :post) do %>
+<ul class="form">
+  	<li>
+		<%= text_field_tag(:to, "To",
+						   :onclick => "clickclear(this, 'To')",
+						   :onblur => "clickrecall(this,'To')") %>
+	</li>
+	<li>
+		<%= text_area_tag(:body, "Message",
+						  :onclick => "clickclear(this, 'Message')",
+						  :onblur => "clickrecall(this,'Message')",
+						  :maxlength => 160) %>
+	</li>
+</ul>
+<p>
+	<%= submit_tag("Send Message", :class => "button white") %>
+</p>
+	<%= hidden_field_tag(:from, "12345") %>
+<% end %>
+
+<p><strong>Best enjoyed on a real iPhone</strong><br />This iPhone UI Framework kit is licenced under GNU General Public License (<a href="http://www.gnu.org/licenses/gpl-3.0.html">GPLv3</a>)</p>
