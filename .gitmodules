@@ -1,0 +1,3 @@
+[submodule "WebUI"]
+	path = WebUI
+	url = git://github.com/manukall/txt4g-webUI.git
