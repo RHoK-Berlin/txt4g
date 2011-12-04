@@ -1,3 +1,6 @@
 [submodule "WebUI"]
 	path = WebUI
 	url = git://github.com/manukall/txt4g-webUI.git
+[submodule "SMSService"]
+	path = SMSService
+	url = git@github.com:i0rek/rhok_smsify.git
