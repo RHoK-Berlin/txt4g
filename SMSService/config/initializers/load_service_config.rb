@@ -1,0 +1,1 @@
+SERVICE_CONFIG = YAML.load_file("#{Rails.root}/config/service_config.yml")[Rails.env]

@@ -20,10 +20,7 @@ describe SmsController do
     context "when valid parameters are given" do
       before do
         response = Typhoeus::Response.new(:code => 200, body: "")
-        hydra = Typhoeus::Hydra.hydra
-        hydra.stub(:get, 
-          "http://www.smsout.de/client/sendsms.php").and_return(response)
-
+        Typhoeus::Request.stubs(:get).returns(response)
         post :send_sms, sms: { from: from, to: to, body: body }
       end
 

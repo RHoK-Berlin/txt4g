@@ -13,15 +13,21 @@ class Sms
     @pw = options[:pw] || ENV['RHOK_SMS_PASSWORD']
   end
 
-  def transmit
-    raise AuthError.new("No user and/or password given!") if user.blank? || pw.blank?
-
-    base_url = "http://www.smsout.de/client/sendsms.php"
-    response = Typhoeus::Request.get(
-      base_url,
-      params: { :Username => user, :Password => pw, :SMSTo => to, :SMSType => :V1, :SMSText => body}
-    )
-    raise AuthError.new("Invalid credentials!") if response.body.include?('ErrorCode: 9997')
-    response
+  def transmit    
+    if SERVICE_CONFIG['default_sms_service'] == 'smsout'
+      base_url = SERVICE_CONFIG['smsout_base_url']
+      params = { :Username => @user,
+                 :Password => @pw,
+                 :SMSType => SERVICE_CONFIG['smsout_smstype'],
+                 :SMSTo => to,
+                 :SMSText => body }
+      response = Typhoeus::Request.get(base_url, params: params)
+      if response.body.include?('ErrorCode: 9997')
+        raise AuthError.new("Invalid credentials!")
+      end
+      return response
+    # elsif SERVICE_CONFIG['default_sms_service'] == 'twilio'
+    # add another service of your choice
+    end
   end
 end
