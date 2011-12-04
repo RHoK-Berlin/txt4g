@@ -10,13 +10,23 @@
           http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
           
-	<mongo:mongo host="localhost" port="27017" />
+	<mongo:mongo host="staff.mongohq.com" port="10081" />
  
-	<bean id="mongoTemplate" class="org.springframework.data.document.mongodb.MongoTemplate">
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg ref="mongo" />
-		<constructor-arg name="databaseName" value="yourdb" />
-		<constructor-arg name="defaultCollectionName" value="yourCollection" />
+		<constructor-arg name="databaseName" value="app1933663" />
+		<constructor-arg name="userCredentials">
+			<bean class="org.springframework.data.authentication.UserCredentials">
+				<constructor-arg name="username" value="heroku"/>
+				<constructor-arg name="password" value="cac745b94e65b37f51adc8d9e6a88aff"/>
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="smsfeedjob" class="org.rhok.txt4g.execution.SmsFeedJob">
+		<constructor-arg ref="mongoTemplate"/>
 	</bean>
  
+ 	<context:component-scan base-package="org.rhok.txt4g"/>
 	<context:annotation-config />
 </beans>

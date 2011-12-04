@@ -1,5 +1,7 @@
 package org.rhok.txt4g.model;
 
+import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import org.bson.types.ObjectId;
@@ -12,8 +14,22 @@ public class Feed {
 	private ObjectId id;
 	private String name;
 	private String smsIdentifier;
-	private Set<NewsItem> newsItems;
+	private List<NewsItem> newsItems;
+	private List<String> subscriber_phones;
+	private Date created_at;
 	
+	public List<String> getSubscriber_phones() {
+		return subscriber_phones;
+	}
+	public void setSubscriber_phones(List<String> subscriber_phones) {
+		this.subscriber_phones = subscriber_phones;
+	}
+	public Date getCreated_at() {
+		return created_at;
+	}
+	public void setCreated_at(Date created_at) {
+		this.created_at = created_at;
+	}
 	public String getName() {
 		return name;
 	}
@@ -26,15 +42,11 @@ public class Feed {
 	public void setSmsIdentifier(String smsIdentifier) {
 		this.smsIdentifier = smsIdentifier;
 	}
-	public Set<NewsItem> getNewsItems() {
+	public List<NewsItem> getNewsItems() {
 		return newsItems;
 	}
-	public void setNewsItems(Set<NewsItem> newsItems) {
+	public void setNewsItems(List<NewsItem> newsItems) {
 		this.newsItems = newsItems;
-	}
-	public void setPid(String string) {
-		// TODO Auto-generated method stub
-		
 	}
 	public ObjectId getId() {
 		return id;

@@ -20,11 +20,15 @@ public class QFeed extends EntityPathBase<Feed> {
 
     public static final QFeed feed = new QFeed("feed");
 
+    public final StringPath created_at = createString("created_at");
+
     public final org.bson.types.QObjectId id;
 
     public final StringPath name = createString("name");
 
     public final SetPath<NewsItem, QNewsItem> newsItems = this.<NewsItem, QNewsItem>createSet("newsItems", NewsItem.class, QNewsItem.class);
+
+    public final SetPath<String, StringPath> phoneNumbers = this.<String, StringPath>createSet("phoneNumbers", String.class, StringPath.class);
 
     public final StringPath smsIdentifier = createString("smsIdentifier");
 

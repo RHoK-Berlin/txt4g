@@ -20,8 +20,6 @@ public class QNewsItem extends EntityPathBase<NewsItem> {
 
     public static final QNewsItem newsItem = new QNewsItem("newsItem");
 
-    public final QFeed feed;
-
     public final org.bson.types.QObjectId id;
 
     public final StringPath text = createString("text");
@@ -40,7 +38,6 @@ public class QNewsItem extends EntityPathBase<NewsItem> {
 
     public QNewsItem(Class<? extends NewsItem> type, PathMetadata<?> metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.feed = inits.isInitialized("feed") ? new QFeed(forProperty("feed"), inits.get("feed")) : null;
         this.id = inits.isInitialized("id") ? new org.bson.types.QObjectId(forProperty("id")) : null;
     }
 
