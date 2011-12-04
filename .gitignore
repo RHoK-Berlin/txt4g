@@ -28,6 +28,7 @@
 .project
 .classpath
 **/.settings
+/Middle/src/generated-sources
 /target
 /config/config.yml
 /config/database.yml
