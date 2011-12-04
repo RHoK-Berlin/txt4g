@@ -21,6 +21,7 @@ public class Txt4gRunner {
 	 * @throws Exception
 	 */
     public static void main(String[] args) throws Exception{
+<<<<<<< HEAD
     	
     	ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("conf/spring.xml");
     	MongoTemplate template = (MongoTemplate) ctx.getBean("mongoTemplate");
@@ -30,6 +31,9 @@ public class Txt4gRunner {
 
     	ThreadRunner<SmsFeedJob> tr = new ThreadRunner<SmsFeedJob>(job);
     	System.out.println("main called");
+=======
+    	ThreadRunner<MessagingJob> tr = new ThreadRunner<MessagingJob>(new MessagingJob());
+>>>>>>> dc52a322b332cf41773dddabca0a11ae91e6adb2
     	Thread t = new Thread(tr);
     	t.start();
     }
